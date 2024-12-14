@@ -53,6 +53,7 @@ def fetch_profile():
 
 # GUI Setup
 root = tk.Tk()
+root.iconbitmap("E:/Documents/CGK/Python/IG/favicon.ico")
 root.title("Instagram Profile Viewer")
 root.geometry("700x600")
 root.configure(bg="#f2f2f2")
@@ -70,6 +71,7 @@ username_label.grid(row=0, column=0, padx=5)
 
 username_entry = tk.Entry(frame, width=30, font=("Helvetica", 12))
 username_entry.grid(row=0, column=1, padx=5)
+username_entry.focus()
 
 # Fetch button
 fetch_button = tk.Button(root, text="Lấy thông tin", font=("Helvetica", 12, "bold"), bg="#4CAF50", fg="white", command=fetch_profile, padx=10, pady=5)
@@ -78,6 +80,11 @@ fetch_button.pack(pady=10)
 # Scrolled text for results
 result_text = scrolledtext.ScrolledText(root, width=80, height=25, font=("Courier", 10))
 result_text.pack(pady=10)
+
+footer = tk.Frame(root, bg="#f1f1f1", height=30)
+footer.pack(side=tk.BOTTOM, fill=tk.X)
+footer_label = tk.Label(footer, text="© 2024 - Dustin", bg="#f1f1f1", font=("Helvetica", 10))
+footer_label.pack(pady=5)
 
 # Run the application
 root.mainloop()
